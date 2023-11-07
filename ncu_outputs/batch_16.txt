@@ -1,0 +1,264 @@
+/home/am13018/examples/word_language_model/pytorch_venv/lib64/python3.6/site-packages/torch/package/_directory_reader.py:17: UserWarning: Failed to initialize NumPy: numpy.core.multiarray failed to import (Triggered internally at  ../torch/csrc/utils/tensor_numpy.cpp:68.)
+  _dtype_to_storage = {data_type(0).dtype: data_type for data_type in _storages}
+==PROF== Connected to process 85955 (/usr/libexec/platform-python3.6)
+==PROF== Profiling "volta_sgemm_128x32_tn" - 1: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 2: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 3: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 4: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 5: 0%....50%....100% - 3 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 6: 0%....50%....100% - 3 passes
+==PROF== Profiling "volta_sgemm_128x64_tn" - 7: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 8: 0%....50%....100% - 3 passes
+==PROF== Profiling "softmax_warp_forward" - 9: 0%....50%....100% - 3 passes
+==PROF== Profiling "volta_sgemm_128x64_nn" - 10: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 11: 0%....50%....100% - 3 passes
+==PROF== Profiling "volta_sgemm_64x32_sliced1x4_tn" - 12: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 13: 0%....50%....100% - 3 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 14: 0%....50%....100% - 3 passes
+==PROF== Profiling "RowwiseMomentsCUDAKernel" - 15: 0%....50%....100% - 3 passes
+==PROF== Profiling "LayerNormForwardCUDAKernel" - 16: 0%....50%....100% - 3 passes
+==PROF== Profiling "volta_sgemm_64x32_sliced1x4_tn" - 17: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 18: 0%....50%....100% - 3 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 19: 0%....50%....100% - 3 passes
+==PROF== Profiling "volta_sgemm_64x32_sliced1x4_tn" - 20: 0%....50%....100% - 3 passes
+==PROF== Profiling "unrolled_elementwise_kernel" - 21: 0%....50%....100% - 3 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 22: 0%....50%....100% - 3 passes
+==PROF== Profiling "RowwiseMomentsCUDAKernel" - 23: 0%....50%....100% - 3 passes
+==PROF== Profiling "LayerNormForwardCUDAKernel" - 24: 0%....50%....100% - 3 passes
+==PROF== Profiling "RowwiseMomentsCUDAKernel" - 25: 0%....50%....100% - 3 passes
+==PROF== Profiling "LayerNormForwardCUDAKernel" - 26: 0%....50%....100% - 3 passes
+==PROF== Disconnected from process 85955
+[85955] platform-python3.6@127.0.0.1
+  volta_sgemm_128x32_tn, 2023-Oct-20 16:24:44, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         939.49
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                     73,728,000
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        368,640
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast), 2023-Oct-20 16:24:44, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Mbyte                           1.36
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        336,128
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::copy_device_to_device(at::TensorIterator&, bool)::{lambda()#3}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>, OffsetCalculator<1, unsigned int, false>, char*, at::native::memory::LoadWithoutCast, at::detail::Array<char*, 2>::StoreWithoutCast>(int, at::native::copy_device_to_device(at::TensorIterator&, bool)::{lambda()#3}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>, OffsetCalculator<1, unsigned int, false>, char*, at::native::memory::LoadWithoutCast, at::detail::Array<char*, 2>::StoreWithoutCast), 2023-Oct-20 16:24:44, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         477.22
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::copy_device_to_device(at::TensorIterator&, bool)::{lambda()#3}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>, OffsetCalculator<1, unsigned int, false>, char*, at::native::memory::LoadWithoutCast, at::detail::Array<char*, 2>::StoreWithoutCast>(int, at::native::copy_device_to_device(at::TensorIterator&, bool)::{lambda()#3}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>, OffsetCalculator<1, unsigned int, false>, char*, at::native::memory::LoadWithoutCast, at::detail::Array<char*, 2>::StoreWithoutCast), 2023-Oct-20 16:24:45, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         477.47
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::copy_device_to_device(at::TensorIterator&, bool)::{lambda()#3}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>, OffsetCalculator<1, unsigned int, false>, char*, at::native::memory::LoadWithoutCast, at::detail::Array<char*, 2>::StoreWithoutCast>(int, at::native::copy_device_to_device(at::TensorIterator&, bool)::{lambda()#3}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>, OffsetCalculator<1, unsigned int, false>, char*, at::native::memory::LoadWithoutCast, at::detail::Array<char*, 2>::StoreWithoutCast), 2023-Oct-20 16:24:45, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         477.47
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2023-Oct-20 16:24:46, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         451.39
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        112,000
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_sgemm_128x64_tn, 2023-Oct-20 16:24:46, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         917.98
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                     27,262,976
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        262,144
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast), 2023-Oct-20 16:24:47, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         173.95
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                         39,424
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void (anonymous namespace)::softmax_warp_forward<float, float, float, 6, false>(float*, float const*, int, int, int), 2023-Oct-20 16:24:47, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         164.06
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        414,400
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        284,480
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        318,080
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_sgemm_128x64_nn, 2023-Oct-20 16:24:47, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         626.02
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                     10,485,760
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        262,144
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::copy_device_to_device(at::TensorIterator&, bool)::{lambda()#3}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>, OffsetCalculator<1, unsigned int, false>, char*, at::native::memory::LoadWithoutCast, at::detail::Array<char*, 2>::StoreWithoutCast>(int, at::native::copy_device_to_device(at::TensorIterator&, bool)::{lambda()#3}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>, OffsetCalculator<1, unsigned int, false>, char*, at::native::memory::LoadWithoutCast, at::detail::Array<char*, 2>::StoreWithoutCast), 2023-Oct-20 16:24:48, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         461.34
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_sgemm_64x32_sliced1x4_tn, 2023-Oct-20 16:24:48, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         623.58
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        442,368
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                     33,030,144
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        589,824
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast), 2023-Oct-20 16:24:48, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         461.06
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        112,128
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3> >(int, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>), 2023-Oct-20 16:24:49, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         899.65
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        112,000
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::(anonymous namespace)::RowwiseMomentsCUDAKernel<float>(long, float, float const*, float*, float*), 2023-Oct-20 16:24:49, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         458.56
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                      2,780,960
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                      5,894,560
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                      1,109,920
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::(anonymous namespace)::LayerNormForwardCUDAKernel<float>(long, float const*, float const*, float const*, float const*, float const*, float*), 2023-Oct-20 16:24:49, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         457.28
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        112,000
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        112,000
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        112,000
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_sgemm_64x32_sliced1x4_tn, 2023-Oct-20 16:24:50, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         623.58
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        442,368
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                     33,030,144
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        589,824
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast), 2023-Oct-20 16:24:50, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         460.80
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        112,128
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::clamp_min_scalar_kernel_impl(at::TensorIterator&, c10::Scalar)::{lambda()#1}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2> >(int, at::native::(anonymous namespace)::clamp_min_scalar_kernel_impl(at::TensorIterator&, c10::Scalar)::{lambda()#1}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>), 2023-Oct-20 16:24:51, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         451.65
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_sgemm_64x32_sliced1x4_tn, 2023-Oct-20 16:24:51, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         623.58
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        442,368
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                     33,030,144
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        589,824
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::unrolled_elementwise_kernel<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>, OffsetCalculator<2, unsigned int, false>, OffsetCalculator<1, unsigned int, false>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast), 2023-Oct-20 16:24:51, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         460.80
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        112,128
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3> >(int, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> >, at::detail::Array<char*, 3>), 2023-Oct-20 16:24:52, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         899.65
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        112,000
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::(anonymous namespace)::RowwiseMomentsCUDAKernel<float>(long, float, float const*, float*, float*), 2023-Oct-20 16:24:52, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         458.82
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                      2,780,960
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                      5,894,560
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                      1,109,920
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::(anonymous namespace)::LayerNormForwardCUDAKernel<float>(long, float const*, float const*, float const*, float const*, float const*, float*), 2023-Oct-20 16:24:52, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         457.28
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        112,000
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        112,000
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        112,000
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::(anonymous namespace)::RowwiseMomentsCUDAKernel<float>(long, float, float const*, float*, float*), 2023-Oct-20 16:24:53, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         458.56
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                      2,780,960
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                      5,894,560
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                      1,109,920
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::(anonymous namespace)::LayerNormForwardCUDAKernel<float>(long, float const*, float const*, float const*, float const*, float const*, float*), 2023-Oct-20 16:24:53, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes.sum                                                                  Kbyte                         457.28
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        112,000
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        112,000
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        112,000
+    ---------------------------------------------------------------------- --------------- ------------------------------
